@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "react-hot-loader/babel",
+    ["module-resolver", {
+      "root": [
+        "./src/**",
+        "./src/stylesheets/**"
+      ]
+    }]
+  ],
+  "presets": [
+    ["@babel/preset-env", { "modules": false }],
+    "@babel/preset-react"
+  ],
+  "env": {
+    "test": {
+      "presets": [["env"], "react"]
+    }
+  }
+}

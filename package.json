@@ -1,0 +1,96 @@
+{
+  "name": "starter-react",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "repository": {},
+  "main": "index.jsx",
+  "sideEffects": false,
+  "scripts": {
+    "start": "webpack-dev-server --mode development --config ./config/webpack.config.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:changed": "jest -o",
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
+    "build": "cross-env NODE_ENV=development webpack --config config/webpack.config.js",
+    "build-prod": "webpack --config config/webpack.config.js",
+    "analyze": "cross-env NODE_ENV=production node scripts/analyze.js",
+    "analyzer": "cross-env NODE_ENV=production webpack --config config/webpack.config.js --profile --json > stats.json"
+  },
+  "author": "bitadj",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-babel": "^5.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "lodash-es": "^4.17.11",
+    "node-sass": "^4.9.3",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-hot-loader": "^4.3.6",
+    "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.5.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.19.0",
+    "webpack-bundle-analyzer": "^3.0.2",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/jest/helper.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|styl|less|sass|scss)$": "identity-obj-proxy"
+    },
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.(css|scss)$": "<rootDir>/config/jest/cssTransform.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/coverage"
+    ]
+  }
+}
